@@ -4,13 +4,6 @@ const barContainer = document.getElementsByClassName('bar-container');
 
 pageContent.scrollTop = 0;
 
-for(let i = 0; i < barContainer.length; ++i){
-    barContainer[i].addEventListener('click', scrollContent => {
-        console.log(i);
-        
-    })
-}
-
 document.querySelectorAll(".bar-container").forEach(function(bar, i) {
     bar.addEventListener("click", addActive => {
         const activeBar = document.querySelector(".left-bar.active");
@@ -24,6 +17,11 @@ document.querySelectorAll(".bar-container").forEach(function(bar, i) {
     })
 
     bar.addEventListener("click", scrollContent => {
-        pageContent.scrollTop = pageContent.scrollTop + document.getElementById(i+1).offsetTop;
+        if(pageContent.scrollTop > document.getElementById(`s${i+1}`).offsetTop){
+            pageContent.scrollTop = document.getElementById(`s${i+1}`).offsetTop;
+        }else if(pageContent.scrollTop < document.getElementById(`s${i+1}`).offsetTop){
+            pageContent.scrollTop = document.getElementById(`s${i+1}`).offsetTop;
+        }
+
     })
 })
