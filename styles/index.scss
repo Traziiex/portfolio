@@ -64,11 +64,20 @@ body{
     height:100%;
     scroll-behavior: smooth;
     overflow-y: hidden;
+    background-color: #262626;
+    transition: all 0.2s ease-in-out 0s;
 }
 .page-section{
     box-sizing: content-box;
     height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:30px;
 }
-#s1, #s3{
-    background-color: #8C8C8C;
+
+#page-content.second{
+    background-color: #3b3b3b;
 }
