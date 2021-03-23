@@ -53,6 +53,9 @@ body{
 
 .left-bar.active{
     width:10px;
+    div{
+        background-color: red;
+    }
 }
 
 #left-nav > div > div:hover > .left-bar{
@@ -71,4 +74,41 @@ body{
 }
 #s1, #s3{
     background-color: #8C8C8C;
+}
+
+#welcome{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        height:85%;
+        display: flex;
+        align-items: flex-end;
+
+        div{
+            max-height: 90px;
+            
+            #arrow{
+                max-height:90px;
+                transform: rotate(-90deg);
+                cursor: pointer;
+                animation-name: up-down;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate-reverse;
+                animation-timing-function: ease-in-out;
+            }
+        }
+        
+    }
+}
+
+@keyframes up-down{
+    0%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
 }

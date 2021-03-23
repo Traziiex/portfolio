@@ -1,6 +1,8 @@
 const pageContent = document.getElementById('page-content');
 const pageSections = document.getElementsByClassName('page-section');
 const barContainer = document.getElementsByClassName('bar-container');
+const arrowButton = document.getElementById('arrow');
+
 
 pageContent.scrollTop = 0;
 
@@ -24,4 +26,9 @@ document.querySelectorAll(".bar-container").forEach(function(bar, i) {
         }
 
     })
+})
+
+arrowButton.addEventListener('click', function(){
+    pageContent.scrollTop = document.getElementById('s1').offsetTop;
+    document.querySelectorAll(".bar-container")[0].children[0].classList.add("active");
 })
